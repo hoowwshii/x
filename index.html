@@ -7,7 +7,26 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
+<script>
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
 
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+} 
+
+</script>
 <style>
 pre{
     border: 2px lightgray solid;
@@ -25,7 +44,49 @@ div{
     width: 500px;
     height: 300px;
 }
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
 
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
 
 table {
             width: 100%;
@@ -405,11 +466,21 @@ table {
     Gregg, C. 和 Zelenski, J. (2020) 讲座 5/15：排序，CS106B 排序。可在此处获取：
     <a href="https://web.stanford.edu/class/archive/cs/cs106b/cs106b.1206/lectures/sorting/">https://web.stanford.edu/class/archive/cs/cs106b/cs106b.1206/lectures/sorting/</a> (访问日期：2024 年 9 月 17 日)。
     </p>
+    
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6f1bpsEpqSmvgL4QdEzKuo?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> -->
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">语言</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="gr.html"><img src="Flag_of_Greece.svg" alt="" style="height: 24px; width: 36px;"></a>
+          <a href="#"><img src="XiJinpingSignature.svg" alt="" style="height: 24px; width: 36px;"></a>
+        </div>
+      </div> 
+    <br><br>
     <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/id/playlist/%CF%83%CF%84%CE%AC%CF%83%CE%B7/pl.u-qxylEN5u3AdeW3X"></iframe>
     <p>这几首歌就是制作这篇文章的时候，我比较常听的几首歌。都是韩国流行音乐。</p>
     <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/id/album/favorite-part/1650514335?i=1650514564"></iframe>
     <p>最最最喜欢的</p>
+    
 </body>
 </html>
